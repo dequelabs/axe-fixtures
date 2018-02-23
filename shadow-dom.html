@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Shadow DOM test fixture</title>
+</head>
+<body>
+	<main id="fixture">
+		<ul>
+			<p>List item 1</p>
+			<p>List item 2</p>
+		</ul>
+		<div id="shadowContainer"></div>
+	</main>
+	<script src="./scripts/webcomponents.min.js"></script>
+	<script>
+	var container = document.getElementById('shadowContainer');
+	var shadowHost = container.attachShadow({ mode: 'open' });
+	var shadowContent = document.createElement('div');
+	shadowContent.setAttribute('style', 'background-color: #333');
+	var content = document.createElement('p');
+	content.textContent = 'Text';
+	shadowContent.appendChild(content);
+	shadowHost.appendChild(shadowContent);
+	</script>
+</body>
+</html>
