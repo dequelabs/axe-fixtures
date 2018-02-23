@@ -4,7 +4,11 @@
 	<title>Shadow DOM test fixture</title>
 </head>
 <body>
-	<main id="fixture">
+	<header id="no_issues">
+		<h1>Shadow DOM testing</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ullamcorper maximus metus convallis consectetur. <a href="#">In auctor</a> volutpat dui, ut varius nulla imperdiet in.</p>
+	</header>
+	<main id="has_issues">
 		<ul>
 			<p>List item 1</p>
 			<p>List item 2</p>
@@ -18,6 +22,7 @@
 	var shadowContent = document.createElement('div');
 	shadowContent.setAttribute('style', 'background-color: #333');
 	var content = document.createElement('p');
+	content.setAttribute('style', 'color: #000');
 	content.textContent = 'Text';
 	shadowContent.appendChild(content);
 	shadowHost.appendChild(shadowContent);
