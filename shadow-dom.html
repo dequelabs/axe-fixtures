@@ -14,16 +14,18 @@
 			<p>List item 1</p>
 			<p>List item 2</p>
 		</ul>
-		<div id="this_is_fine">
-			<h3>This is fine</h3>
-			<img src="./assets/images/thisisfine.jpg" alt="Illustration of dog sitting on a chair inside a house with flames">
+		<div id="include_exclude">
+			<div id="this_is_fine">
+				<h3>This is fine</h3>
+				<img src="./assets/images/thisisfine.jpg" alt="Illustration of dog sitting on a chair inside a house with flames">
+			</div>
+			<h2>Shadow DOM content</h2>
+			<div id="shadow_issues"></div>
 		</div>
-		<h2>Shadow DOM content</h2>
-		<div id="shadowContainer"></div>
 	</main>
 	<script src="./scripts/webcomponents.min.js"></script>
 	<script>
-	var container = document.getElementById('shadowContainer');
+	var container = document.getElementById('shadow_issues');
 	var shadowHost = container.attachShadow({ mode: 'open' });
 	var shadowContent = document.createElement('div');
 	shadowContent.setAttribute('style', 'background-color: #333');
