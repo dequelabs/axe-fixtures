@@ -1,0 +1,17 @@
+version: 2
+registries:
+  npm-registry-agora-dequecloud-com-artifactory-api-npm-dequelabs:
+    type: npm-registry
+    url: https://agora.dequecloud.com/artifactory/api/npm/dequelabs/
+    username: "${{secrets.NPM_REGISTRY_AGORA_DEQUECLOUD_COM_ARTIFACTORY_API_NPM_DEQUELABS_USERNAME}}"
+    password: "${{secrets.NPM_REGISTRY_AGORA_DEQUECLOUD_COM_ARTIFACTORY_API_NPM_DEQUELABS_PASSWORD}}"
+
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "10:00"
+  open-pull-requests-limit: 10
+  registries:
+  - npm-registry-agora-dequecloud-com-artifactory-api-npm-dequelabs
